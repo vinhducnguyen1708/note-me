@@ -1,0 +1,1 @@
+ ansible-playbook -i all-in-one -e @/etc/kolla/globals.yml -e @/etc/kolla/passwords.yml -e CONFIG_DIR=/etc/kolla  -e kolla_action=deploy /usr/share/kolla-ansible/ansible/site.yml -t haproxy

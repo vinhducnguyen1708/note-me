@@ -1,0 +1,11 @@
+qemu-img convert -f qcow2 -O raw manila-service-image-master.qcow2 manila-service-image-master.raw
+
+openstack image create "manila-service-image" --file manila-service-image-master.raw --disk-format raw --container-format bare --public
+
+openstack flavor create manila-service-flavor --id 100 --ram 4096 --disk 10 --vcpus 2
+
+manila type-create generic_share_type True
+
+manila share-network-create --name selfservice-net-share1 --neutron-net-id cf03e6b2-5466-4d51-96d3-75fe2a4ed180 --neutron-subnet-id 3e51c151-0e11-41da-9b16-ed26fa8ad3d1
+
+manila create NFS 10 --name share01 --share-network selfservice-net-share1 --share-type generic_share_type

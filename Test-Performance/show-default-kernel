@@ -1,0 +1,7 @@
+
+  grubby --info=ALL | grep ^kernel
+  grubby --default-kernel
+
+  
+  
+

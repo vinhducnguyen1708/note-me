@@ -1,0 +1,54 @@
+[root@controller1 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=172.16.68.73
+NETMASK=255.255.255.0
+GATEWAY=172.16.68.1
+NAME=eth0
+ONBOOT=yes
+DEVICE=eth0
+DNS1=8.8.8.8
+[root@controller1 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth1
+DEVICE=eth1
+BOOTPROTO=static
+IPADDR=10.10.10.101
+NETMASK=255.255.255.0
+ONBOOT=yes
+NAME=eth1
+[root@controller1 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth2
+DEVICE=eth2
+BOOTPROTO=static
+IPADDR=192.168.10.10
+NETMASK=255.255.255.0
+ONBOOT=yes
+NAME=eth2
+
+
+
+-----------------------------------------------------------------------------
+[root@compute1 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=172.16.68.74
+NETMASK=255.255.255.0
+GATEWAY=172.16.68.1
+DNS1=8.8.8.8
+NAME=eth0
+DEVICE=eth0
+ONBOOT=yes
+[root@compute1 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth1
+DEVICE=eth1
+BOOTPROTO=static
+IPADDR=10.10.10.100
+NETMASK=255.255.255.0
+ONBOOT=yes
+[root@compute1 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth2
+DEVICE=eth2
+BOOTPROTO=static
+IPADDR=192.168.10.11
+NETWORK=255.255.255.0
+ONBOOT=yes
+-------------------------------------------------------------------------------------
+cat << EOF > /etc/sysconfig/network-scripts/route-eth1
+169.254.169.254 via 192.168.1.2 dev eth1
+EOF

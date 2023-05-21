@@ -1,0 +1,235 @@
+---
+heat_template_version: 2018-08-31
+description: HOT template to create 3 server groups - Frontend, Backend, Database
+parameters:
+  key_name:
+    type: string
+    description: Name of a KeyPair to enable SSH access to the instance
+    default: admin-keypair-ussuri
+  flavor_frontend:
+    type: string
+    description: Instance type for Frontend server
+    default: vl.SMC01
+  flavor_backend:
+    type: string
+    description: Instance type for Backend server
+    default: vl.SMC01
+  flavor_database:
+    type: string
+    description: Instance type for Database server
+    default: vl.SMC01
+  image_frontend:
+    type: string
+    description: Frontend Image
+    default: Ubuntu2004.2.x86_64
+  image_backend:
+    type: string
+    description: Backend Image
+    default: Ubuntu2004.2.x86_64
+  image_database:
+    type: string
+    description: Database Image
+    default: Ubuntu2004.2.x86_64
+  network_frontend:
+    type: string
+    description: The network for the frontend VM
+  # network_backend:
+  #   type: string
+  #   description: The network for the database VM
+  # network_database:
+  #   type: string
+  #   description: The network for the database VM
+  size_frontend_disk:
+    type: number
+    label: Size of frontend volume
+    description: The size of frontend volume
+    default: 10
+  size_backend_disk:
+    type: number
+    label: Size of backend volume
+    description: The size of backend volume
+    default: 10
+  size_database_disk:
+    type: number
+    label: Size of database volume
+    description: The size of database volume
+    default: 20
+  cidr:
+    type: string
+    label: Network CIDR
+    description: The CIDR of the private network.
+    default: "192.168.178.0/24"
+  dns:
+    type: comma_delimited_list
+    label: DNS nameservers
+    description: Comma separated list of DNS nameservers for the private network.
+    default: "8.8.8.8,8.8.4.4"
+  net_pool_start:
+    type: string
+    description: network pool start. typically .10 of whatever /24 is defined
+    default: ""
+  net_pool_end:
+    type: string
+    description: network pool end. typically .10 of whatever /24 is defined
+    default: ""
+  volume_type:
+    type: string
+    label: Volume type
+    default: ceph_hdd
+
+resources:
+
+  my_private_network:
+    type: OS::Neutron::Net
+  my_private_subnet:
+    type: OS::Neutron::Subnet
+    properties:
+      network: {get_resource: my_private_network}
+      cidr: {get_param: cidr}
+      dns_nameservers: {get_param: dns}
+      allocation_pools:
+        - start: { get_param: net_pool_start }
+          end: { get_param: net_pool_end }
+      ip_version: 4
+
+  srvgroup_frontend:
+    type: OS::Nova::ServerGroup
+    properties:
+      name:  frontend-group
+      policies: [ 'anti-affinity' ]
+  frontend1_bootable_volume:
+      type: OS::Cinder::Volume
+      properties:
+        volume_type: {get_param: volume_type}
+        size: {get_param: size_frontend_disk}
+        image: {get_param: image_frontend}
+  frontend2_bootable_volume:
+      type: OS::Cinder::Volume
+      properties:
+        volume_type: {get_param: volume_type}
+        size: {get_param: size_frontend_disk}
+        image: {get_param: image_frontend}
+  frontend_vm1:
+    type: OS::Nova::Server
+    properties:
+      flavor: {get_param: flavor_frontend}
+      key_name: { get_param: key_name }
+      networks:
+        - network: {get_param: network_frontend}
+        - network: {get_resource: my_private_network}
+      block_device_mapping:
+        - device_name: vda
+          volume_id: {get_resource: frontend1_bootable_volume}
+          delete_on_termination: true
+      scheduler_hints:
+        group: { get_resource: srvgroup_frontend }
+  frontend_vm2:
+    type: OS::Nova::Server
+    properties:
+      flavor: {get_param: flavor_frontend}
+      key_name: { get_param: key_name }
+      networks:
+        - network: {get_param: network_frontend}
+        - network: {get_resource: my_private_network}
+      block_device_mapping:
+        - device_name: vda
+          volume_id: {get_resource: frontend2_bootable_volume}
+          delete_on_termination: true
+      scheduler_hints:
+        group: { get_resource: srvgroup_frontend }
+#####
+  srvgroup_backend:
+    type: OS::Nova::ServerGroup
+    properties:
+      name:  backend-group
+      policies: [ 'anti-affinity' ]
+  backend1_bootable_volume:
+      type: OS::Cinder::Volume
+      properties:
+        volume_type: {get_param: volume_type}
+        size: {get_param: size_backend_disk}
+        image: {get_param: image_backend}
+  backend2_bootable_volume:
+      type: OS::Cinder::Volume
+      properties:
+        volume_type: {get_param: volume_type}
+        size: {get_param: size_backend_disk}
+        image: {get_param: image_backend}
+  backend_vm1:
+    type: OS::Nova::Server
+    properties:
+      flavor: {get_param: flavor_backend}
+      key_name: { get_param: key_name }
+      networks:
+        - network: {get_resource: my_private_network}
+      block_device_mapping:
+        - device_name: vda
+          volume_id: {get_resource: backend1_bootable_volume}
+          delete_on_termination: true
+      scheduler_hints:
+        group: { get_resource: srvgroup_backend }
+  backend_vm2:
+    type: OS::Nova::Server
+    properties:
+      flavor: {get_param: flavor_backend}
+      key_name: { get_param: key_name }
+      networks:
+        - network: {get_resource: my_private_network}
+      block_device_mapping:
+        - device_name: vda
+          volume_id: {get_resource: backend2_bootable_volume}
+          delete_on_termination: true
+      scheduler_hints:
+        group: { get_resource: srvgroup_backend }
+####
+  srvgroup_database:
+    type: OS::Nova::ServerGroup
+    properties:
+      name:  database-group
+      policies: [ 'anti-affinity' ]
+  database1_bootable_volume:
+      type: OS::Cinder::Volume
+      properties:
+        volume_type: {get_param: volume_type}
+        size: {get_param: size_database_disk}
+        image: {get_param: image_database}
+  database2_bootable_volume:
+      type: OS::Cinder::Volume
+      properties:
+        volume_type: {get_param: volume_type}
+        size: {get_param: size_database_disk}
+        image: {get_param: image_database}
+  database_vm1:
+    type: OS::Nova::Server
+    properties:
+      flavor: {get_param: flavor_database}
+      key_name: { get_param: key_name }
+      networks:
+        - network: {get_resource: my_private_network}
+      block_device_mapping:
+        - device_name: vda
+          volume_id: {get_resource: database1_bootable_volume}
+          delete_on_termination: true
+      scheduler_hints:
+        group: { get_resource: srvgroup_database }
+  database_vm2:
+    type: OS::Nova::Server
+    properties:
+      flavor: {get_param: flavor_database}
+      key_name: { get_param: key_name }
+      networks:
+        - network: {get_resource: my_private_network}
+      block_device_mapping:
+        - device_name: vda
+          volume_id: {get_resource: database2_bootable_volume}
+          delete_on_termination: true
+      scheduler_hints:
+        group: { get_resource: srvgroup_database }
+
+outputs:
+  my_network_show:
+    description: Info network
+    value: {get_attr: [my_private_network , show]}
+  my_subnet_show:
+    description: Info subnet
+    value: {get_attr: [my_private_subnet , show]}

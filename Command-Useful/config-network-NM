@@ -1,0 +1,61 @@
+
+# Setup IP ens3 
+nmcli c modify ens3 ipv4.addresses 10.159.27.160/26
+nmcli c modify ens3 ipv4.gateway 10.159.27.129
+nmcli c modify ens3 ipv4.dns 8.8.8.8
+nmcli c modify ens3 ipv4.method manual
+nmcli con mod ens3 connection.autoconnect yes
+
+
+# Setup IP ens4
+nmcli c modify ens4 ipv4.addresses 192.168.20.31/24
+nmcli c modify ens4 ipv4.method manual
+nmcli con mod ens4 connection.autoconnect yes
+
+# Setup IP ens5
+nmcli c modify ens5 ipv4.addresses 192.168.30.31/24
+nmcli c modify ens5 ipv4.method manual
+nmcli con mod ens5 connection.autoconnect yes
+
+# Setup IP ens6
+nmcli c modify ens6 ipv4.addresses 192.168.40.31/24
+nmcli c modify ens6 ipv4.method manual
+nmcli con mod ens6 connection.autoconnect yes
+
+
+# Setup IP ens192 
+nmcli c modify ens3 ipv4.addresses 192.168.10.39/24
+nmcli c modify ens3 ipv4.gateway 192.168.10.1
+nmcli c modify ens3 ipv4.dns 8.8.8.8
+nmcli c modify ens3 ipv4.method manual
+nmcli con mod ens3 connection.autoconnect yes
+
+# Setup IP ens160
+nmcli c modify ens4 ipv4.addresses 192.168.20.39/24
+nmcli c modify ens4 ipv4.method manual
+nmcli con mod ens4 connection.autoconnect yes
+
+# Setup IP ens160
+nmcli c modify ens5 ipv4.addresses 192.168.30.27/24
+nmcli c modify ens5 ipv4.method manual
+nmcli con mod ens5 connection.autoconnect yes
+
+# Setup IP ens160
+nmcli c modify ens6 ipv4.addresses 192.168.40.39/24
+nmcli c modify ens6 ipv4.method manual
+nmcli con mod ens6 connection.autoconnect yes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

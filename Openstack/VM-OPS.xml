@@ -1,0 +1,133 @@
+<!--
+WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
+OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
+  virsh edit instance-00000fce
+or other application using the libvirt API.
+-->
+
+<domain type='kvm'>
+  <name>instance-00000fce</name>
+  <uuid>29402277-7423-402d-8088-ab1f6247dc14</uuid>
+  <metadata>
+    <nova:instance xmlns:nova="http://openstack.org/xmlns/libvirt/nova/1.0">
+      <nova:package version="21.1.2-1.el8"/>
+      <nova:name>vm1</nova:name>
+      <nova:creationTime>2022-07-06 09:59:52</nova:creationTime>
+      <nova:flavor name="CloudServer.05">
+        <nova:memory>4096</nova:memory>
+        <nova:disk>100</nova:disk>
+        <nova:swap>0</nova:swap>
+        <nova:ephemeral>0</nova:ephemeral>
+        <nova:vcpus>4</nova:vcpus>
+      </nova:flavor>
+      <nova:owner>
+        <nova:user uuid="0fc042b001d841c4a59c9820817dff65">admin</nova:user>
+        <nova:project uuid="e7b4618916794ed58226047d8ce424ea">admin</nova:project>
+      </nova:owner>
+    </nova:instance>
+  </metadata>
+  <memory unit='KiB'>4194304</memory>
+  <currentMemory unit='KiB'>4194304</currentMemory>
+  <vcpu placement='static'>4</vcpu>
+  <cputune>
+    <shares>4096</shares>
+  </cputune>
+  <sysinfo type='smbios'>
+    <system>
+      <entry name='manufacturer'>RDO</entry>
+      <entry name='product'>OpenStack Compute</entry>
+      <entry name='version'>21.1.2-1.el8</entry>
+      <entry name='serial'>29402277-7423-402d-8088-ab1f6247dc14</entry>
+      <entry name='uuid'>29402277-7423-402d-8088-ab1f6247dc14</entry>
+      <entry name='family'>Virtual Machine</entry>
+    </system>
+  </sysinfo>
+  <os>
+    <type arch='x86_64' machine='pc-i440fx-rhel7.6.0'>hvm</type>
+    <boot dev='hd'/>
+    <smbios mode='sysinfo'/>
+  </os>
+  <features>
+    <acpi/>
+    <apic/>
+  </features>
+  <cpu mode='host-model' check='partial'>
+    <topology sockets='2' dies='1' cores='2' threads='1'/>
+    <feature policy='require' name='pcid'/>
+    <feature policy='require' name='vmx'/>
+  </cpu>
+  <clock offset='utc'>
+    <timer name='pit' tickpolicy='delay'/>
+    <timer name='rtc' tickpolicy='catchup'/>
+    <timer name='hpet' present='no'/>
+  </clock>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/libexec/qemu-kvm</emulator>
+    <disk type='network' device='disk'>
+      <driver name='qemu' type='raw' cache='none' discard='unmap'/>
+      <auth username='cinder'>
+        <secret type='ceph' uuid='63fa2250-4fe0-4733-bb2c-fe5fd5fd8d6a'/>
+      </auth>
+      <source protocol='rbd' name='volumes_hdd/volume-794d1af3-a55e-4bc5-83d7-8ce23fb81701'>
+        <host name='10.10.30.61' port='6789'/>
+        <host name='10.10.30.62' port='6789'/>
+        <host name='10.10.30.63' port='6789'/>
+      </source>
+      <target dev='vda' bus='virtio'/>
+      <iotune>
+        <total_bytes_sec>200000000</total_bytes_sec>
+        <total_iops_sec>250</total_iops_sec>
+      </iotune>
+      <serial>794d1af3-a55e-4bc5-83d7-8ce23fb81701</serial>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
+    </disk>
+    <controller type='usb' index='0' model='piix3-uhci'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x2'/>
+    </controller>
+    <controller type='pci' index='0' model='pci-root'/>
+    <interface type='bridge'>
+      <mac address='fa:16:3e:ae:9c:f5'/>
+      <source bridge='br-int'/>
+      <virtualport type='openvswitch'>
+        <parameters interfaceid='25f17947-fdcd-41e5-b011-fd1c9c81d634'/>
+      </virtualport>
+      <target dev='tap25f17947-fd'/>
+      <model type='virtio'/>
+      <mtu size='1500'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+    <serial type='pty'>
+      <log file='/var/lib/nova/instances/29402277-7423-402d-8088-ab1f6247dc14/console.log' append='off'/>
+      <target type='isa-serial' port='0'>
+        <model name='isa-serial'/>
+      </target>
+    </serial>
+    <console type='pty'>
+      <log file='/var/lib/nova/instances/29402277-7423-402d-8088-ab1f6247dc14/console.log' append='off'/>
+      <target type='serial' port='0'/>
+    </console>
+    <input type='tablet' bus='usb'>
+      <address type='usb' bus='0' port='1'/>
+    </input>
+    <input type='mouse' bus='ps2'/>
+    <input type='keyboard' bus='ps2'/>
+    <graphics type='vnc' port='-1' autoport='yes' listen='0.0.0.0'>
+      <listen type='address' address='0.0.0.0'/>
+    </graphics>
+    <video>
+      <model type='cirrus' vram='16384' heads='1' primary='yes'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
+    </video>
+    <memballoon model='virtio'>
+      <stats period='10'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </memballoon>
+    <rng model='virtio'>
+      <backend model='random'>/dev/urandom</backend>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x0'/>
+    </rng>
+  </devices>
+</domain>

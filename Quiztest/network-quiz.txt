@@ -1,0 +1,943 @@
+::Q1::How long is an IPv6 address?
+{
+~32 bits
+~128 bytes
+~64 bits
+=128 bits
+####An IPv6 address is 128 bits long.
+}
+
+::Q2::What flavor of Network Address Translation can be used to have one IP address allow many users to connect to the global Internet?
+{
+~NAT
+~Static
+~Dynamic
+=PAT
+####Port Address Translation (PAT) allows a one-to-many approach to network address translation.
+}
+
+::Q3::What are the two main types of access control lists (ACLs)?
+{
+~%50%Standard
+~%-50%IEEE
+~%50%Extended
+~%-50%Specialized
+####Standard and extended access control lists (ACLs) are used to configure security on a router.
+}
+
+::Q4::You have 10 users plugged into a hub running 10Mbps half-duplex. There is a server connected to the switch running 10Mbps half-duplex as well. How much bandwidth does each host have to the server?
+{
+~100 kbps
+~1 Mbps
+~2 Mbps
+=10 Mbps 
+####Each device has 10 Mbps to the server.
+}
+
+::Q5::	
+Which of the following is the valid host range for the subnet on which the IP address 192.168.168.188 255.255.255.192 resides?
+{
+=192.168.168.129-190
+~192.168.168.129-191
+~192.168.168.128-190
+~192.168.168.128-192
+####256 - 192 = 64. 64 + 64 = 128. 128 + 64 = 192. The subnet is 128, the broadcast address is 191, and the valid host range is the numbers in between, or 129-190.
+}
+
+::Q6::Which protocol does DHCP use at the Transport layer?
+{
+~IP
+~TCP
+=UDP
+~ARP
+####User Datagram Protocol is a connection network service at the Transport layer, and DHCP uses this connectionless service.
+}
+
+::Q7::Where is a hub specified in the OSI model?
+{
+~Session layer
+=Physical layer
+~Data Link layer
+~Application layer
+####Hubs regenerate electrical signals, which are specified at the Physical layer.
+}
+
+::Q8::Which protocol is used to send a destination network unknown message back to originating hosts?
+{
+~TCP
+~ARP
+=ICMP
+~BootP
+####ICMP is the protocol at the Network layer that is used to send messages back to an originating router.
+}
+
+::Q9::Which class of IP address has the most host addresses available by default?
+{
+=Class A
+~Class B
+~Class C
+~Class A and B
+####Class A addressing provides 24 bits for host addressing.
+}
+
+::Q10::Which protocol does Ping use?
+{
+~TCP
+~ARP
+=ICMP
+~BootP
+####ICMP is the protocol at the Network layer that is used to send echo requests and replies.
+}
+
+::Q11::Which one of the following also known as flat network ?
+{
+=Single broadcast domain.
+~Single collision domain.
+~Multi broadcast domain.
+~Multi collision domain.
+}
+
+::Q12::VLANs increase the number of ?
+{
+~Collision domains.
+=Broadcast domains.
+~Networks.
+~None of the above.
+}
+
+::Q13::How many VLANs traffic carried by An access port ?
+{
+~Two VLAN.
+=One VLAN.
+~No VLAN.
+~None of the above
+}
+
+::Q14::How many VLANs traffic carried out by a trunk port ?
+{
+~0 to 4049.
+~1 to 4049.
+~0 to 4094.
+=1 to 4094.
+}
+
+::Q15::IEEE standard for trunking protocol is ?
+{
+=802.1Q.
+~802.1p.
+~802.1D.
+~802.1w.
+}
+
+::Q16::What method can be used by two computers to ensure that packets are not dropped because too much data is being sent too quickly?
+{
+~encapsulation
+=flow control
+~access method
+~response timeout
+####In order for two computers to be able to communicate effectively, there must be a mechanism that allows both the source and destination to set the timing of the transmission and receipt of data. Flow control allows for this by ensuring that data is not sent too fast for it to be received properly.
+}
+
+::Q17::What type of communication will send a message to all devices on a local area network?
+{
+=broadcast
+~multicast
+~unicast
+~allcast
+####Broadcast communication is a one-to-all communication. A unicast communication is a one-to-one communication. Multicast is a one-to-many communication where the message is delivered to a specific group of hosts. Allcast is not a standard term to describe message delivery.
+}
+
+::Q18::What process is used to place one message inside another message for transfer from the source to the destination?
+{
+~access control
+~decoding
+=encapsulation
+~flow control
+####Encapsulation is the process of placing one message format into another message format. An example is how a packet is placed in its entirety into the data field as it is encapsulated into a frame.
+}
+
+::Q19::A web client is sending a request for a webpage to a web server. From the perspective of the client, what is the correct order of the protocol stack that is used to prepare the request for transmission?
+{
+~HTTP, IP, TCP, Ethernet
+=HTTP, TCP, IP, Ethernet
+~Ethernet, TCP, IP, HTTP
+~Ethernet, IP, TCP, HTTP
+####1. HTTP governs the way that a web server and client interact.2. TCP manages individual conversations between web servers and clients.3. IP is responsible for delivery across the best path to the destination. 4. Ethernet takes the packet from IP and formats it for transmission.
+}
+
+::Q20::Which statement is correct about network protocols?
+{
+~Network protocols define the type of hardware that is used and how it is mounted in racks.
+=They define how messages are exchanged between the source and the destination.
+~They all function in the network access layer of TCP/IP.
+~They are only required for exchange of messages between devices on remote networks.
+####Network protocols are implemented in hardware, or software, or both. They interact with each other within different layers of a protocol stack. Protocols have nothing to do with the installation of the network equipment. Network protocols are required to exchange information between source and destination devices in both local and remote networks.
+}
+
+::Q21::Which statement is true about the TCP/IP and OSI models?
+{
+=The TCP/IP transport layer and OSI Layer 4 provide similar services and functions.
+~The TCP/IP network access layer has similar functions to the OSI network layer.
+~The OSI Layer 7 and the TCP/IP application layer provide identical functions.
+~The first three OSI layers describe general services that are also provided by the TCP/IP internet layer.
+####The TCP/IP internet layer provides the same function as the OSI network layer. The transport layer of both the TCP/IP and OSI models provides the same function. The TCP/IP application layer includes the same functions as OSI Layers 5, 6, and 7.
+}
+
+::Q22::What is an advantage of using standards to develop and implement protocols?
+{
+~A particular protocol can only be implemented by one manufacturer.
+=Products from different manufacturers can interoperate successfully.
+~Different manufacturers are free to apply different requirements when implementing a protocol.
+~Standards provide flexibility for manufacturers to create devices that comply with unique requirements.
+####Standards-based protocols enable products from different manufacturers to interoperate successfully. Standards-based protocols enable many manufacturers to implement that protocol. If different manufacturers implement different requirements within the same protocol, then their products will not be interoperable.
+}
+
+::Q23::What three application layer protocols are part of the TCP/IP protocol suite? (Choose three.)
+{
+~%-100%ARP
+~%30%DHCP 
+~%40%DNS 
+~%30%FTP
+~%-100%NAT
+~%-100%PPP
+####DNS, DHCP, and FTP are all application layer protocols in the TCP/IP protocol suite. ARP and PPP are network access layer protocols, and NAT is an internet layer protocol in the TCP/IP protocol suite.
+}
+
+::Q24::What are proprietary protocols?
+{
+~protocols developed by private organizations to operate on any vendor hardware
+~protocols that can be freely used by any organization or vendor
+=protocols developed by organizations who have control over their definition and operation
+~a collection of protocols known as the TCP/IP protocol suite
+####Proprietary protocols have their definition and operation controlled by one company or vendor. Some of them can be used by different organizations with permission from the owner. The TCP/IP protocol suite is an open standard, not a proprietary protocol.
+}
+
+::Q25::What is an advantage of network devices using open standard protocols?
+{
+~Network communications is confined to data transfers between devices from the same vendor.
+=A client host and a server running different operating systems can successfully exchange data.
+~Internet access can be controlled by a single ISP in each market.
+~Competition and innovation are limited to specific types of products.
+####An advantage of network devices implementing open standard protocols, such as from the TCP/IP suite, is that clients and servers running different operating systems can communicate with each other. Open standard protocols facilitate innovation and competition between vendors and across markets, and can reduce the occurrence of monopolies in networking markets.
+}
+
+::Q26::A computer in a given network is communicating with a specific group of computers. What type of communication is this?
+{
+~broadcast
+=multicast
+~unicast
+~ARP
+~HTTP
+}
+
+::Q27::Which protocol is responsible for controlling the size and rate of the HTTP messages exchanged between server and client?
+{
+~HTTP
+~ARP
+=TCP
+~DHCP
+}
+
+::Q28::A user is viewing an HTML document located on a web server. What protocol segments the messages and manages the segments in the individual conversation between the web server and the web client?
+{
+~DHCP
+=TCP
+~HTTP
+~ARP
+}
+
+::Q29::Which IEEE standard enables a wireless NIC to connect to a wireless AP that is made by a different manufacturer?
+{
+~802.1
+=802.11
+~802.3
+~802.2
+}
+
+::Q30::What is a function of Layer 4 of the OSI model?
+{
+~to specify the packet type to be used by the communications
+~to apply framing information to the packet, based on the attached media
+~to represent data to the user, including encoding and dialog control
+=to describe the ordered and reliable delivery of data between source and destination
+}
+
+::Q31::What is a benefit of using a layered model for network communications?
+{
+=fostering competition among device and software vendors by enforcing the compatibility of their products
+~enhancing network transmission performance by defining targets for each layer
+~avoiding possible incompatibility issues by using a common set of developing tools
+~simplifying protocol development by limiting every layer to one function
+}
+
+::Q32::What is the general term that is used to describe a piece of data at any layer of a networking model?
+{
+~frame
+~packet
+=protocol data unit
+~segment
+}
+
+::Q33::Which statement accurately describes a TCP/IP encapsulation process when a PC is sending data to the network?
+{
+~Data is sent from the internet layer to the network access layer.
+~Packets are sent from the network access layer to the transport layer.
+=Segments are sent from the transport layer to the internet layer.
+~Frames are sent from the network access layer to the internet layer.
+}
+
+::Q34::What statement describes the function of the Address Resolution Protocol?
+{
+~ARP is used to discover the IP address of any host on a different network.
+~ARP is used to discover the IP address of any host on the local network.
+~ARP is used to discover the MAC address of any host on a different network.
+=ARP is used to discover the MAC address of any host on the local network.
+}
+
+::Q35::Which address provides a unique host address for data communications at the internet layer?
+{
+~data-link address
+=logical address
+~Layer 2 address
+~physical address
+}
+
+::Q36::Which protocol is used by a computer to find the MAC address of the default gateway on an Ethernet network?
+{
+=ARP
+~TCP
+~UDP
+~DHCP
+}
+
+::Q37::If the default gateway is configured incorrectly on the host, what is the impact on communications?
+{
+~The host is unable to communicate on the local network.
+=The host can communicate with other hosts on the local network, but is unable to communicate with hosts on remote networks.
+~The host can communicate with other hosts on remote networks, but is unable to communicate with hosts on the local network.
+~There is no impact on communications.
+}
+
+::Q38::Open the PT Activity. Perform the tasks in the activity instructions and then answer the question. Based on the configured network, what IP address would PC1 and PC2 use as their default gateway?
+{
+~192.168.1.2
+~10.1.1.1
+~172.16.1.1
+=192.168.1.1
+~192.168.1.10
+}
+
+::Q39::A user sends an HTTP request to a web server on a remote network. During encapsulation for this request, what information is added to the address field of a frame to indicate the destination?
+{
+=the MAC address of the default gateway
+~the IP address of the destination host
+~the MAC address of the destination host
+~the IP address of the default gateway
+####A frame is encapsulated with source and destination MAC addresses. The source device will not know the MAC address of the remote host. An ARP request will be sent by the source and will be responded to by the router. The router will respond with the MAC address of its interface, the one which is connected to the same network as the source.
+}
+
+::Q40::If a network device has a mask of /28, how many IP addresses are available for hosts on this network?
+{
+~256
+~254
+~62
+~32
+~16
+=14
+####A /28 mask is the same as 255.255.255.240. This leaves 4 host bits. With 4 host bits, 16 IP addresses are possible, but one address represents the subnet number and one address represents the broadcast address. 14 addresses can then be used to assign to network devices.
+}
+
+::Q41::Which subnet mask would be used if 5 host bits are available?
+{
+~255.255.255.0
+~255.255.255.128
+=255.255.255.224
+~255.255.255.240
+#####The subnet mask of 255.255.255.0 has 8 host bits. The mask of 255.255.255.128 results in 7 host bits. The mask of 255.255.255.224 has 5 host bits. Finally, 255.255.255.240 represents 4 host bits.
+}
+
+::Q42::How many host addresses are available on the network 172.16.128.0 with a subnet mask of 255.255.252.0?
+{
+~510
+~512
+=1022
+~1024
+~2046
+~2048
+####A mask of 255.255.252.0 is equal to a prefix of /22. A /22 prefix provides 22 bits for the network portion and leaves 10 bits for the host portion. The 10 bits in the host portion will provide 1022 usable IP addresses (2^10 – 2 = 1022).
+}
+
+::Q43::How many bits must be borrowed from the host portion of an address to accommodate a router with five connected networks?
+{
+~two
+=three
+~four
+~five
+####Each network that is directly connected to an interface on a router requires its own subnet. The formula 2n, where n is the number of bits borrowed, is used to calculate the available number of subnets when borrowing a specific number of bits.
+}
+
+::Q44::A network administrator wants to have the same network mask for all networks at a particular small site. The site has the following networks and number of devices:
+IP phones – 22 addresses
+PCs – 20 addresses needed
+Printers – 2 addresses needed
+Scanners – 2 addresses needed
+The network administrator has deemed that 192.168.10.0/24 is to be the network used at this site. Which single subnet mask would make the most efficient use of the available addresses to use for the four subnetworks?
+{
+~255.255.255.0
+~255.255.255.192
+=255.255.255.224
+~255.255.255.240
+~255.255.255.248
+~255.255.255.252
+####If the same mask is to be used, then the network with the most hosts must be examined for the number of hosts, which in this case is 22 hosts. Thus, 5 host bits are needed. The /27 or 255.255.255.224 subnet mask would be appropriate to use for these networks.
+}
+
+::Q45::A company has a network address of 192.168.1.64 with a subnet mask of 255.255.255.192. The company wants to create two subnetworks that would contain 10 hosts and 18 hosts respectively. Which two networks would achieve that? (Choose two.)
+{
+~%-50%192.168.1.16/28
+~%50%192.168.1.64/27
+~%-50%192.168.1.128/27
+~%50%192.168.1.96/28
+~%-50%192.168.1.192/28
+#####Subnet 192.168.1.64 /27 has 5 bits that are allocated for host addresses and therefore will be able to support 32 addresses, but only 30 valid host IP addresses. Subnet 192.168.1.96/28 has 4 bits for host addresses and will be able to support 16 addresses, but only 14 valid host IP addresses
+}
+
+::Q46::A network administrator is variably subnetting a network. The smallest subnet has a mask of 255.255.255.248. How many usable host addresses will this subnet provide?
+{
+~4
+=6
+~8
+~10
+~12
+####The mask 255.255.255.248 is equivalent to the /29 prefix. This leaves 3 bits for hosts, providing a total of 6 usable IP addresses (23 = 8 – 2 = 6).
+}
+
+
+::Q47::Which three IP addresses are private ? (Choose three.)
+{
+~%30%10.1.1.1
+~%-50%172.32.5.2
+~%-50%192.167.10.10
+~%40%172.16.4.4 
+~%30%192.168.5.5
+~%-50%224.6.6.6
+####The private IP addresses are within these three ranges:10.0.0.0 – 10.255.255.255, 172.16.0.0 – 172.31.255.255, 192.168.0.0 – 192.168.255.255
+}
+
+::Q48::Which two IPv4 to IPv6 transition techniques manage the interconnection of IPv6 domains? (Choose two.)
+{
+~%-100%trunking
+~%50%dual stack
+~%-50%encapsulation
+~%50%tunneling
+~%-100%multiplexing
+####There are three techniques to allow IPv4 and IPv6 to co-exist on a network. Dual stack allows IPv4 and IPv6 to coexist on the same network segment. Dual stack devices run both IPv4 and IPv6 protocol stacks simultaneously. Tunneling is a method of transporting an IPv6 packet over an IPv4 network. The IPv6 packet is encapsulated inside an IPv4 packet, similar to other types of data. Network Address Translation 64 (NAT64) allows IPv6-enabled devices to communicate with IPv4-enabled devices using a translation technique similar to NAT for IPv4
+}
+
+::Q49::Which of these addresses is the shortest abbreviation for the IP address:
+3FFE:1044:0000:0000:00AB:0000:0000:0057?
+{
+~3FFE:1044::AB::57
+~3FFE:1044::00AB::0057
+=3FFE:1044:0:0:AB::57
+~3FFE:1044:0:0:00AB::0057
+~3FFE:1044:0000:0000:00AB::57
+~3FFE:1044:0000:0000:00AB::0057
+}
+
+::Q50::What type of address is automatically assigned to an interface when IPv6 is enabled on that interface?
+{
+~global unicast
+=link-local
+~loopback
+~unique local
+####When IPv6 is enabled on any interface, that interface will automatically generate an IPv6 link-local address.
+}
+
+::Q50::What are two types of IPv6 unicast addresses? (Choose two.)
+{
+~%-100%multicast
+~%50%loopback
+~%50%link-local
+~%-100%anycast
+~%-50%broadcast
+####Multicast, anycast, and unicast are types of IPv6 addresses. There is no broadcast address in IPv6. Loopback and link-local are specific types of unicast addresses.
+}
+
+::Q51::What are three parts of an IPv6 global unicast address? (Choose three.)
+{
+~%-50%an interface ID that is used to identify the local network for a particular host
+~%30%a global routing prefix that is used to identify the network portion of the address that has been provided by an ISP 
+~%40%a subnet ID that is used to identify networks inside of the local enterprise site
+~%-50%a global routing prefix that is used to identify the portion of the network address provided by a local administrator
+~%30%an interface ID that is used to identify the local host on the network
+####There are three elements that make up an IPv6 global unicast address. A global routing prefix which is provided by an ISP, a subnet ID which is determined by the organization, and an interface ID which uniquely identifies the interface interface of a host.
+}
+
+::Q52::An administrator wants to configure hosts to automatically assign IPv6 addresses to themselves by the use of Router Advertisement messages, but also to obtain the DNS server address from a DHCPv6 server. Which address assignment method should be configured?
+{
+~SLAAC
+=stateless DHCPv6
+~stateful DHCPv6
+~RA and EUI-64
+#####Stateless DHCPv6 allows clients to use ICMPv6 Router Advertisement (RA) messages to automatically assign IPv6 addresses to themselves, but then allows these clients to contact a DHCPv6 server to obtain additional information such as the domain name and address of DNS servers. SLAAC does not allow the client to obtain additional information through DHCPv6, and stateful DHCPv6 requires that the client receive its interface address directly from a DHCPv6 server. RA messages, when combined with an EUI-64 interface identifier, are used to automatically create an interface IPv6 address, and are part of both SLAAC and stateless DHCPv6.
+}
+
+::Q53::Which protocol supports Stateless Address Autoconfiguration (SLAAC) for dynamic assignment of IPv6 addresses to a host?
+{
+~ARPv6
+~DHCPv6
+=ICMPv6
+~UDP
+####SLAAC uses ICMPv6 messages when dynamically assigning an IPv6 address to a host. DHCPv6 is an alternate method of assigning an IPv6 addresses to a host. ARPv6 does not exist. Neighbor Discovery Protocol (NDP) provides the functionality of ARP for IPv6 networks. UDP is the transport layer protocol used by DHCPv6.
+}
+
+::Q54::Which two things can be determined by using the ping command? (Choose two.)
+{
+~%-50%the number of routers between the source and destination device
+~%-50%the IP address of the router nearest the destination device
+~%50%the average time it takes a packet to reach the destination and for the response to return to the source 
+~%50%the destination device is reachable through the network
+~%-100%the average time it takes each router in the path between source and destination to respond
+####A ping command provides feedback on the time between when an echo request was sent to a remote host and when the echo reply was received. This can be a measure of network performance. A successful ping also indicates that the destination host was reachable through the network.
+}
+
+::Q55::What is the purpose of ICMP messages?
+{
+~to inform routers about network topology changes
+~to ensure the delivery of an IP packet
+=to provide feedback of IP packet transmissions
+~to monitor the process of a domain name to IP address resolution
+####The purpose of ICMP messages is to provide feedback about issues that are related to the processing of IP packets.
+}
+
+::Q56::What is indicated by a successful ping to the ::1 IPv6 address?
+{
+~The host is cabled properly.
+~The default gateway address is correctly configured.
+~All hosts on the local link are available.
+~The link-local address is correctly configured.
+=IP is properly installed on the host.
+####The IPv6 address ::1 is the loopback address. A successful ping to this address means that the TCP/IP stack is correctly installed. It does not mean that any addresses are correctly configured.
+}
+
+::Q57::A user is executing a tracert to a remote device. At what point would a router, which is in the path to the destination device, stop forwarding the packet?
+{
+~when the router receives an ICMP Time Exceeded message
+~when the RTT value reaches zero
+~when the host responds with an ICMP Echo Reply message
+=when the value in the TTL field reaches zero
+~when the values of both the Echo Request and Echo Reply messages reach zero
+####When a router receives a traceroute packet, the value in the TTL field is decremented by 1. When the value in the field reaches zero, the receiving router will not forward the packet, and will send an ICMP Time Exceeded message back to the source.
+}
+
+::Q58::What is the binary equivalent of the decimal number 232?
+{
+=11101000
+~11000110
+~10011000
+~11110010
+}
+
+::Q59::What is the decimal equivalent of the binary number 10010101?
+{
+=149
+~157
+~168
+~192
+}
+
+::Q60::What field content is used by ICMPv6 to determine that a packet has expired?
+{
+~TTL field
+~CRC field
+=Hop Limit field
+~Time Exceeded field
+####ICMPv6 sends a Time Exceeded message if the router cannot forward an IPv6 packet because the packet expired. The router uses a hop limit field to determine if the packet has expired, and does not have a TTL field.
+}
+
+
+::Q61::Which two characteristics are associated with UDP sessions? Choose two.
+{
+~%50%Destination devices receive traffic with minimal delay.
+~%-50%Transmitted data segments are tracked.
+~%-50%Destination devices reassemble messages and pass them to an application.
+~%50%Received data is unacknowledged.
+~%-100%Unacknowledged data packets are retransmitted.
+####TCP:· Provides tracking of transmitted data segments· Destination devices will acknowledge received data.· Source devices will retransmit unacknowledged data....UDP· Destination devices will not acknowledge received data· Headers use very little overhead and cause minimal delay.​
+}
+
+::Q62::What happens if part of an FTP message is not delivered to the destination?
+{
+~The message is lost because FTP does not use a reliable delivery method.
+~The FTP source host sends a query to the destination host.
+=The part of the FTP message that was lost is re-sent.
+~The entire FTP message is re-sent.
+####Because FTP uses TCP as its transport layer protocol, sequence and acknowledgment numbers will identify the missing segments, which will be re-sent to complete the message.
+}
+
+::Q63::A host device needs to send a large video file across the network while providing data communication to other users. Which feature will allow different communication streams to occur at the same time, without having a single data stream using all available bandwidth?
+{
+~window size
+=multiplexing
+~port numbers
+~acknowledgments
+####Multiplexing is useful for interleaving multiple communication streams. Window size is used to slow down the rate of data communication. Port numbers are used to pass data streams to their proper applications. Acknowledgments are used to notify a sending device that a stream of data packets has or has not been received.
+}
+
+::Q64::What kind of port must be requested from IANA in order to be used with a specific application?
+{
+=registered port
+~private port
+~dynamic port
+~source port
+####Registered ports (numbers 1024 to 49151) are assigned by IANA to a requesting entity to use with specific processes or applications. These processes are primarily individual applications that a user has chosen to install, rather than common applications that would receive a well-known port number. For example, Cisco has registered port 1985 for its Hot Standby Routing Protocol (HSRP) process.​
+}
+
+::Q65::What type of information is included in the transport header?
+{
+~destination and source logical addresses
+~destination and source physical addresses
+=destination and source port numbers
+~encoded application data
+####In a segment, the transport layer header will include the source and destination process, or port numbers. Destination and source physical addressing is included in the frame header. Destination and source logical addressing is included in the network header. Application data is encoded in the upper layers of the protocol stack.
+}
+
+::Q67::What is a socket?
+{
+~the combination of the source and destination IP address and source and destination Ethernet address
+=the combination of a source IP address and port number or a destination IP address and port number
+~the combination of the source and destination sequence and acknowledgment numbers
+~the combination of the source and destination sequence numbers and port numbers
+####A socket is a combination of the source IP address and source port or the destination IP address and the destination port number.
+}
+
+::Q68::What is the complete range of TCP and UDP well-known ports?
+{
+~0 to 255
+=0 to 1023
+~256 – 1023
+~1024 – 49151
+####There are three ranges of TCP and UDP ports. The well-know range of port numbers is from 0 – 1023.
+}
+
+::Q69::Which flag in the TCP header is used in response to a received FIN in order to terminate connectivity between two network devices?
+{
+~FIN
+=ACK
+~SYN
+~RST
+####In a TCP session, when a device has no more data to send, it will send a segment with the FIN flag set. The connected device that receives the segment will respond with an ACK to acknowledge that segment. The device that sent the ACK will then send a FIN message to close the connection it has with the other device. The sending of the FIN should be followed with the receipt of an ACK from the other device.​
+}
+
+::Q70::What is a characteristic of a TCP server process?
+{
+~Every application process running on the server has to be configured to use a dynamic port number.
+=There can be many ports open simultaneously on a server, one for each active server application.
+~An individual server can have two services assigned to the same port number within the same transport layer services.
+~A host running two different applications can have both configured to use the same server port.
+####Each application process running on the server is configured to use a port number, either by default or manually, by a system administrator. An individual server cannot have two services assigned to the same port number within the same transport layer services. A host running a web server application and a file transfer application cannot have both configured to use the same server port. There can be many ports open simultaneously on a server, one for each active server application.
+}
+
+::Q71::Which two flags in the TCP header are used in a TCP three-way handshake to establish connectivity between two network devices? (Choose two.)
+{
+~%50%ACK
+~%-100%FIN
+~%-100%PSH
+~%-100%RST
+~%50%SYN
+~%100%URG
+####TCP uses the SYN and ACK flags in order to establish connectivity between two network devices.
+}
+
+::Q72::A PC is downloading a large file from a server. The TCP window is 1000 bytes. The server is sending the file using 100-byte segments. How many segments will the server send before it requires an acknowledgment from the PC?
+{
+~1 segment
+=10 segments
+~100 segments
+~1000 segments
+####With a window of 1000 bytes, the destination host accepts segments until all 1000 bytes of data have been received. Then the destination host sends an acknowledgment.
+}
+
+::Q73::Which factor determines TCP window size?
+{
+~the amount of data to be transmitted
+~the number of services included in the TCP segment
+=the amount of data the destination can process at one time
+~the amount of data the source is capable of sending at one time
+####Window is the number of bytes that the sender will send prior to expecting an acknowledgement from the destination device. The initial window is agreed upon during the session startup via the three-way handshake between source and destination. It is determined by how much data the destination device of a TCP session is able to accept and process at one time.
+}
+
+::Q74::During a TCP session, a destination device sends an acknowledgment number to the source device. What does the acknowledgment number represent?
+{
+~the total number of bytes that have been received
+~one number more than the sequence number
+=the next byte that the destination expects to receive
+~the last sequence number that was sent by the source
+}
+
+::Q75::What information is used by TCP to reassemble and reorder received segments?
+{
+~port numbers
+=sequence numbers
+~acknowledgment numbers
+~fragment numbers
+####At the transport layer, TCP uses the sequence numbers in the header of each TCP segment to reassemble the segments into the correct order.
+}
+
+::Q76::What does TCP do if the sending source detects network congestion on the path to the destination?
+{
+~The source host will send a request for more frequent acknowledgments to the destination.
+=The source will decrease the amount of data that it sends before it must receive acknowledgements from the destination.
+~The destination will request retransmission of the entire message.
+~The source will acknowledge the last segment that is sent and include a request for a smaller window size in the message.
+####If the source determines that TCP segments are either not being acknowledged or not acknowledged in a timely manner, then it can reduce the number of bytes it sends before receiving an acknowledgment. Notice that it is the source that is reducing the number of unacknowledged bytes it sends. This does not involve changing the window size in the segment header.
+}
+
+::Q77::What is a characteristic of UDP?
+{
+~UDP datagrams take the same path and arrive in the correct order at the destination.
+~Applications that use UDP are always considered unreliable.
+=UDP reassembles the received datagrams in the order they were received.
+~UDP only passes data to the network when the destination is ready to receive the data.
+####UDP has no way to reorder the datagrams into their transmission order, so UDP simply reassembles the data in the order it was received and forwards it to the application.​
+}
+
+::Q78::What does a client do when it has UDP datagrams to send?
+{
+=It just sends the datagrams.
+~It queries the server to see if it is ready to receive data.
+~It sends a simplified three-way handshake to the server.
+~It sends to the server a segment with the SYN flag set to synchronize the conversation.
+####When a client has UDP datagrams to send, it just sends the datagrams.
+}
+
+::Q79::What happens if the first packet of a TFTP transfer is lost?
+{
+~The client will wait indefinitely for the reply.
+=The TFTP application will retry the request if a reply is not received.
+~The next-hop router or the default gateway will provide a reply with an error code.
+~The transport layer will retry the query if a reply is not received.
+####The TFTP protocol uses UDP for queries, so the TFTP application must implement the reliability, if needed.
+}
+
+::Q80::A host device is receiving live streaming video. How does the device account for video data that is lost during transmission?
+{
+~The device will immediately request a retransmission of the missing data.
+~The device will use sequence numbers to pause the video stream until the correct data arrives.
+~The device will delay the streaming video until the entire video stream is received.
+=The device will continue receiving the streaming video, but there may be a momentary disruption.
+####When TCP is used as the transport protocol, data must be received in a specific sequence or all data must be fully received in order for it to be used. TCP will use sequence numbers, acknowledgments and retransmission to accomplish this. However, when UDP is used as the transport protocol, data that arrives out of order or with missing segments may cause a momentary disruption, but the destination device may still be able to use the data that it has received. This technology results in the least amount of network delay by providing minimal reliability. Since live streaming video applications use UDP as the transport protocol, the receiver will continue showing the video although there may be a slight delay or reduction in quality.
+}
+
+::Q81::Why does HTTP use TCP as the transport layer protocol?
+{
+~to ensure the fastest possible download speed
+~because HTTP is a best-effort protocol
+~because transmission errors can be tolerated easily
+=because HTTP requires reliable delivery
+####When a host requests a web page, transmission reliability and completeness must be guaranteed. Therefore, HTTP uses TCP as its transport layer protocol.
+}
+
+::Q82::When is UDP preferred to TCP?
+{
+~when a client sends a segment to a server
+~when all the data must be fully received before any part of it is considered useful
+=when an application can tolerate some loss of data during transmission
+~when segments must arrive in a very specific sequence to be processed successfully
+####UDP can be used when an application can tolerate some data loss. UDP is the preferred protocol for applications that provide voice or video that cannot tolerate delay.
+}
+
+::Q83::Which three application layer protocols use TCP? (Choose three.)
+{
+~%30%SMTP
+~%30%FTP
+~%-100%SNMP
+~%40%HTTP
+~%-100%TFTP
+~%-100%DHCP
+####Some protocols require the reliable data transport that is provided by TCP. In addition, these protocols do not have real time communication requirements and can tolerate some data loss while minimizing protocol overhead. Examples of these protocols are SMTP, FTP, and HTTP.
+}
+
+::Q84::Which two definitions accurately describe the associated application layer protocol? (Choose two.)
+{
+~%-100%SMTP – transfers web pages from web servers to clients
+~%50%Telnet – provides remote access to servers and networking devices
+~%50%DNS – resolves Internet names to IP addresses
+~%-100%FTP – transfers email messages and attachments
+~%-100%HTTP – enables devices on a network to obtain IP addresses
+####The Domain Name Service (DNS) protocol resolves Internet names to IP addresses. Hypertext Transfer Protocol (HTTP) transfers files that make up the web pages of the World Wide Web. The Simple Mail Transfer Protocol (SMTP) transfers mail messages and attachments. Telnet, a terminal emulation protocol, provides remote access to servers and networking devices. The File Transfer Protocol (FTP) transfers files between systems.
+}
+
+::Q85::The application layer of the TCP/IP model performs the functions of what three layers of the OSI model? (Choose three.)
+{
+~%-100%physical
+~%30%session
+~%-100%network
+~%40%presentation
+~%-100%data link
+~%-100%transport
+~%30%application
+####The network access layer of the TCP/IP model performs the same functions as the physical and data link layers of the OSI model. The internetwork layer equates to the network layer of the OSI model. The transport layers are the same in both models. The application layer of the TCP/IP model represents the session, presentation, and application layers of the OSI model.​
+}
+
+::Q86::Which layer in the TCP/IP model is used for formatting, compressing, and encrypting data?
+{
+~internetwork
+~session
+~presentation
+=application
+~network access
+####The application layer of the TCP/IP model performs the functions of three layers of the OSI model – application, presentation, and session. The application layer of the TCP/IP model is the layer that provides the interface between the applications, is responsible for formatting, compressing, and encrypting data, and is used to create and maintain dialogs between source and destination applications.
+}
+
+::Q87::What are two characteristics of the application layer of the TCP/IP model? (Choose two.)
+{
+~%-100%responsibility for logical addressing
+~%-100%responsibility for physical addressing
+~%50%the creation and maintenance of dialogue between source and destination applications 
+~%50%closest to the end user
+~%-100%the establishing of window size
+####The application layer of the TCP/IP model is the layer that is closest to the end user, providing the interface between the applications. It is responsible for formatting, compressing, and encrypting data, and is used to create and maintain dialog between source and destination applications.
+}
+
+::Q88::A manufacturing company subscribes to certain hosted services from its ISP. The services that are required include hosted world wide web, file transfer, and e-mail. Which protocols represent these three key applications? (Choose three.)
+{
+~%30%FTP
+~%40%HTTP
+~%-100%DNS
+~%-100%SNMP
+~%-100%DHCP
+~%30%SMTP
+####The ISP uses the HTTP protocol in conjunction with hosting web pages, the FTP protocol with file transfers, and SMTP with e-mail. DNS is used to translate domain names to IP addresses. SNMP is used for network management traffic. DHCP ic commonly used to manage IP addressing.
+}
+
+::Q89::What is an example of network communication that uses the client-server model?
+{
+~A user uses eMule to download a file that is shared by a friend after the file location is determined.
+~A workstation initiates an ARP to find the MAC address of a receiving host.
+~A user prints a document by using a printer that is attached to a workstation of a coworker.
+=A workstation initiates a DNS request when the user types www.cisco.com in the address bar of a web browser.
+####When a user types a domain name of a website into the address bar of a web browser, a workstation needs to send a DNS request to the DNS server for the name resolution process. This request is a client/server model application. The eMule application is P2P. Sharing a printer on a workstation is a peer-to-peer network. Using ARP is just a broadcast message sent by a host.
+}
+
+::Q90::Two students are working on a network design project. One student is doing the drawing, while the other student is writing the proposal. The drawing is finished and the student wants to share the folder that contains the drawing so that the other student can access the file and copy it to a USB drive. Which networking model is being used?
+{
+=peer-to-peer
+~client-based
+~master-slave
+~point-to-point
+####In a peer-to-peer (P2P) networking model, data is exchanged between two network devices without the use of a dedicated server. ​​
+}
+
+::Q91::What do the client/server and peer-to-peer network models have in common?
+{
+~Both models have dedicated servers.
+=Both models support devices in server and client roles.
+~Both models require the use of TCP/IP-based protocols.
+~Both models are used only in the wired network environment.
+####In both the client/server and peer-to-peer network models, clients and servers exist. In peer-to-peer networks, no dedicated server exists, but a device can assume the server role to provide information to a device serving in the client role.
+}
+
+::Q92::Which application layer protocol uses message types such as GET, PUT, and POST?
+{
+~DNS
+~DHCP
+~SMTP
+=HTTP
+~POP3
+####The GET command is a client request for data from a web server. A PUT command uploads resources and content, such as images, to a web server. A POST command uploads data files to a web server.
+}
+
+::Q93::What is the function of the Nslookup utility?
+{
+=to manually query the name servers to resolve a given host name
+~to view the network settings on a host
+~to manually force a client to send a DHCP request
+~to display all cached DNS entries on a host
+####Nslookup is a command-line utility that is used to send a query to DNS servers to resolve a specific host name to an IP address.
+}
+
+::Q94::What message type is used by an HTTP client to request data from a web server?
+{
+~POST
+~ACK
+=GET
+~PUT
+####HTTP clients send GET messages to request data from web servers.
+}
+
+::Q95::Which protocol is used by a client to communicate securely with a web server?
+{
+~SMB
+=HTTPS
+~SMTP
+~IMAP
+####HTTPS is a secure form of HTTP used to access web content hosted by a web server.
+}
+
+::Q96::Which three statements describe a DHCP Discover message? (Choose three.)
+{
+~%-100%The source MAC address is 48 ones (FF-FF-FF-FF-FF-FF).
+~%30%The destination IP address is 255.255.255.255.
+~%-100%The message comes from a server offering an IP address.
+~%40%The message comes from a client seeking an IP address.
+~%30%All hosts receive the message, but only a DHCP server replies.
+~%-100%Only the DHCP server receives the message.
+####When a host configured to use DHCP powers up on a network it sends a DHCPDISCOVER message. FF-FF-FF-FF-FF-FF is the L2 broadcast address. A DHCP server replies with a unicast DHCPOFFER message back to the host.
+}
+
+::Q97::What part of the URL, http://www.cisco.com/index.html, represents the top-level DNS domain?
+{
+=.com
+~www
+~http
+~index
+####The components of the URL http://www.cisco.com/index.htm are as follows: http = protocol, www = part of the server name, cisco = part of the domain name, index = file name, com = the top-level domain
+}
+
+::Q98::Which two tasks can be performed by a local DNS server? (Choose two.)
+{
+~%-100%providing IP addresses to local hosts
+~%-100%allowing data transfer between two network devices
+~%50%mapping name-to-IP addresses for internal hosts
+~%50%forwarding name resolution requests between servers
+~%-100%retrieving email messages
+####Two important functions of DNS are to (1) provide IP addresses for domain names such as www.cisco.com, and (2) forward requests that cannot be resolved to other servers in order to provide domain name to IP address translation. DHCP provides IP addressing information to local devices. A file transfer protocol such as FTP, SFTP, or TFTP provides file sharing services. IMAP or POP can be used to retrieve an email message from a server.
+}
+
+::Q99::Which phrase describes an FTP daemon?
+{
+~a diagnostic FTP program
+=a program that is running on an FTP server
+~a program that is running on an FTP client
+~an application that is used to request data from an FTP server
+####An FTP server runs an FTP daemon, which is a program that provides FTP services. End users who request services must run an FTP client program.
+}
+
+::Q100::Which statement is true about FTP?
+{
+~The client can choose if FTP is going to establish one or two connections with the server.
+=The client can download data from or upload data to the server.
+~FTP is a peer-to-peer application.
+~FTP does not provide reliability during data transmission.
+####FTP is a client/server protocol. FTP requires two connections between the client and the server and uses TCP to provide reliable connections. With FTP, data transfer can happen in either direction. The client can download (pull) data from the server or upload (push) data to the server.
+}
+
+::Q101::What is true about the Server Message Block protocol?
+{
+~Different SMB message types have a different format.
+=Clients establish a long term connection to servers.
+~SMB messages cannot authenticate a session.
+~SMB uses the FTP protocol for communication.
+####The Server Message Block protocol is a protocol for file, printer, and directory sharing. Clients establish a long term connection to servers and when the connection is active, the resources can be accessed. Every SMB message has the same format. The use of SMB differs from FTP mainly in the length of the sessions. SMB messages can authenticate sessions.
+}
+
+::Q102::Which application layer protocol is used to provide file-sharing and print services to Microsoft applications?
+{
+~HTTP
+~SMTP
+~DHCP
+=SMB
+####SMB is used in Microsoft networking for file-sharing and print services. The Linux operating system provides a method of sharing resources with Microsoft networks by using a version of SMB called SAMBA.
+}

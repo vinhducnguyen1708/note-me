@@ -1,0 +1,1 @@
+select * from secrets where deleted = '0';
